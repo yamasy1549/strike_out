@@ -4,7 +4,8 @@ class ResultsController < ApplicationController
   def index
     @result = Result.new
     @results = Result.all
-    @top_results = Result.order('score desc').take(3)
+    top_scores = Result.pluck(:score).uniq.max(3)
+    @top_results = Result.where(score: top_scores).order('score desc')
   end
 
   def new
