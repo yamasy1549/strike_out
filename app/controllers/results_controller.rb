@@ -2,6 +2,7 @@ class ResultsController < ApplicationController
   before_action :set_result, only: [:edit, :update, :destroy]
 
   def index
+    @result = Result.new
     @results = Result.all
     @top_results = Result.order('score desc').take(3)
   end
