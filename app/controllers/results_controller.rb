@@ -1,12 +1,9 @@
 class ResultsController < ApplicationController
-  before_action :set_result, only: [:show, :edit, :update, :destroy]
+  before_action :set_result, only: [:edit, :update, :destroy]
 
   def index
     @results = Result.all
     @top_results = Result.order('score desc').take(3)
-  end
-
-  def show
   end
 
   def new
@@ -21,8 +18,8 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       if @result.save
-        format.html { redirect_to @result, notice: 'Result was successfully created.' }
-        format.json { render :show, status: :created, location: @result }
+        format.html { redirect_to results_url, notice: 'Result was successfully created.' }
+        format.json { render :index, status: :created }
       else
         format.html { render :new }
         format.json { render json: @result.errors, status: :unprocessable_entity }
@@ -33,8 +30,8 @@ class ResultsController < ApplicationController
   def update
     respond_to do |format|
       if @result.update(result_params)
-        format.html { redirect_to @result, notice: 'Result was successfully updated.' }
-        format.json { render :show, status: :ok, location: @result }
+        format.html { redirect_to results_url, notice: 'Result was successfully updated.' }
+        format.json { render :index, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @result.errors, status: :unprocessable_entity }
