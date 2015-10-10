@@ -1,28 +1,21 @@
 class ResultsController < ApplicationController
   before_action :set_result, only: [:show, :edit, :update, :destroy]
 
-  # GET /results
-  # GET /results.json
   def index
     @results = Result.all
+    @top_results = Result.order('score desc').take(3)
   end
 
-  # GET /results/1
-  # GET /results/1.json
   def show
   end
 
-  # GET /results/new
   def new
     @result = Result.new
   end
 
-  # GET /results/1/edit
   def edit
   end
 
-  # POST /results
-  # POST /results.json
   def create
     @result = Result.new(result_params)
 
@@ -37,8 +30,6 @@ class ResultsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /results/1
-  # PATCH/PUT /results/1.json
   def update
     respond_to do |format|
       if @result.update(result_params)
@@ -51,8 +42,6 @@ class ResultsController < ApplicationController
     end
   end
 
-  # DELETE /results/1
-  # DELETE /results/1.json
   def destroy
     @result.destroy
     respond_to do |format|
@@ -62,12 +51,10 @@ class ResultsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_result
       @result = Result.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def result_params
       params.require(:result).permit(:name, :score)
     end
