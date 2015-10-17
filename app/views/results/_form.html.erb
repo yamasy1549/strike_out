@@ -19,6 +19,10 @@
     <%= f.label :score %><br>
     <%= f.number_field :score %>
   </div>
+  <div class="field">
+    <%= f.radio_button :adult, true %>
+    <%= f.radio_button :adult, false %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
