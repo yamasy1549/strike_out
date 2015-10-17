@@ -2,10 +2,14 @@ class ResultsController < ApplicationController
   before_action :set_result, only: [:edit, :update, :destroy]
 
   def index
-    today_top_scores = Result.where(created_at: 0.day.ago.all_day).pluck(:score).uniq.max(3)
-    yesterday_top_scores = Result.where(created_at: 1.day.ago.all_day).pluck(:score).uniq.max(3)
-    @today_top_results = Result.where(score: today_top_scores).order('score desc')
-    @yesterday_top_results = Result.where(score: yesterday_top_scores).order('score desc')
+    today_adult_top_scores = Result.where(created_at: 0.day.ago.all_day, adult: true).pluck(:score).uniq.max(3)
+    today_child_top_scores = Result.where(created_at: 0.day.ago.all_day, adult: false).pluck(:score).uniq.max(3)
+    yesterday_adult_top_scores = Result.where(created_at: 1.day.ago.all_day, adult: true).pluck(:score).uniq.max(3)
+    yesterday_child_top_scores = Result.where(created_at: 1.day.ago.all_day, adult: false).pluck(:score).uniq.max(3)
+    @today_adult_top_results = Result.where(score: today_adult_top_scores, adult: true).order('score desc')
+    @today_child_top_results = Result.where(score: today_child_top_scores, adult: false).order('score desc')
+    @yesterday_adult_top_results = Result.where(score: yesterday_adult_top_scores, adult: true).order('score desc')
+    @yesterday_child_top_results = Result.where(score: yesterday_child_top_scores, adult: false).order('score desc')
   end
 
   def new

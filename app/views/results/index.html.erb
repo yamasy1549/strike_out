@@ -4,20 +4,43 @@
 
 <table>
   <thead>
+    <h2>おとな</h2>
     <tr>
       <th>Score</th>
       <th>Name</th>
-      <th>Adult</th>
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @today_top_results.each do |result| %>
+    <% @today_adult_top_results.each do |result| %>
       <tr>
         <td><%= result.score %></td>
         <td><%= result.name %></td>
-        <td><%= result.adult %></td>
+        <td>
+          <%= link_to 'Edit', edit_result_path(result) %>
+          <%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <h2>こども</h2>
+    <tr>
+      <th>Score</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @today_child_top_results.each do |result| %>
+      <tr>
+        <td><%= result.score %></td>
+        <td><%= result.name %></td>
         <td>
           <%= link_to 'Edit', edit_result_path(result) %>
           <%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -32,17 +55,38 @@
     <tr>
       <th>Score</th>
       <th>Name</th>
-      <th>Adult</th>
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @yesterday_top_results.each do |result| %>
+    <% @yesterday_adult_top_results.each do |result| %>
       <tr>
         <td><%= result.score %></td>
         <td><%= result.name %></td>
-        <td><%= result.adult %></td>
+        <td>
+          <%= link_to 'Edit', edit_result_path(result) %>
+          <%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Score</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @yesterday_child_top_results.each do |result| %>
+      <tr>
+        <td><%= result.score %></td>
+        <td><%= result.name %></td>
         <td>
           <%= link_to 'Edit', edit_result_path(result) %>
           <%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %>
