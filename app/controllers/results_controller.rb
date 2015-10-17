@@ -55,6 +55,6 @@ class ResultsController < ApplicationController
     end
 
     def result_params
-      params.require(:result).permit(:name, :score)
+      params.require(:result).permit(:name, :score, :adult)
     end
 end
