@@ -2,8 +2,6 @@ class ResultsController < ApplicationController
   before_action :set_result, only: [:edit, :update, :destroy]
 
   def index
-    @result = Result.new
-    @results = Result.all
     top_scores = Result.pluck(:score).uniq.max(3)
     @top_results = Result.where(score: top_scores).order('score desc')
   end

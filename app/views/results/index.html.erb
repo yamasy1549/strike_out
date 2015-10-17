@@ -26,33 +26,3 @@
     <% end %>
   </tbody>
 </table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Score</th>
-      <th>Name</th>
-      <th>Adult</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @results.reverse_each do |result| %>
-      <tr>
-        <td><%= result.score %></td>
-        <td><%= result.name %></td>
-        <td><%= result.adult %></td>
-        <td>
-          <%= link_to 'Edit', edit_result_path(result) %>
-          <%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-<h1>New Result</h1>
-
-<%= render 'form' %>
