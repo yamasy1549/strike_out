@@ -1,0 +1,13 @@
+$gray: #ccc;
+
+.ranking-table {
+  font-size: 24px;
+  margin: auto;
+
+  td { padding: 10px; }
+}
+
+hr {
+  border-top-width: 4px;
+  color: $gray;
+}

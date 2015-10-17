@@ -1,84 +1,74 @@
-<h1>Listing Results</h1>
+<div class="row">
+  <div class="col-md-6">
+    <h2 class="text-center">おとな</h2>
+    <table class="ranking-table">
+      <tbody>
+        <% @today_adult_top_results.each do |result| %>
+          <tr>
+            <td>
+              <%= link_to result.name, edit_result_path(result) %>
+            </td>
+            <td><%= result.score %>pt</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-<table>
-  <thead>
-    <h2>おとな</h2>
-    <tr>
-      <th>Score</th>
-      <th>Name</th>
-    </tr>
-  </thead>
+  <div class="col-md-6">
+    <h2 class="text-center">こども</h2>
+    <table class="ranking-table">
+      <tbody>
+        <% @today_child_top_results.each do |result| %>
+          <tr>
+            <td>
+              <%= link_to result.name, edit_result_path(result) %>
+            </td>
+            <td><%= result.score %>pt</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-  <tbody>
-    <% @today_adult_top_results.each do |result| %>
-      <tr>
-        <td><%= result.score %></td>
-        <td>
-          <%= link_to result.name, edit_result_path(result) %>
-        </td>
-      </tr>
+<hr>
+
+<div class="row">
+  <div class="col-md-6">
+    <% if @yesterday_adult_top_results.present? %>
+      <h2 class="text-center">おとな</h2>
+      <table class="ranking-table">
+        <tbody>
+          <% @yesterday_adult_top_results.each do |result| %>
+            <tr>
+              <td>
+                <%= link_to result.name, edit_result_path(result) %>
+              </td>
+              <td><%= result.score %>pt</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<table>
-  <thead>
-    <h2>こども</h2>
-    <tr>
-      <th>Score</th>
-      <th>Name</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @today_child_top_results.each do |result| %>
-      <tr>
-        <td><%= result.score %></td>
-        <td>
-          <%= link_to result.name, edit_result_path(result) %>
-        </td>
-      </tr>
+    <div class="col-md-6">
+      <% if @yesterday_child_top_results.present? %>
+        <h2 class="text-center">こども</h2>
+        <table class="ranking-table">
+          <tbody>
+            <% @yesterday_child_top_results.each do |result| %>
+              <tr>
+                <td>
+                  <%= link_to result.name, edit_result_path(result) %>
+                </td>
+                <td><%= result.score %>pt</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </table>
     <% end %>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Score</th>
-      <th>Name</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @yesterday_adult_top_results.each do |result| %>
-      <tr>
-        <td><%= result.score %></td>
-        <td>
-          <%= link_to result.name, edit_result_path(result) %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Score</th>
-      <th>Name</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @yesterday_child_top_results.each do |result| %>
-      <tr>
-        <td><%= result.score %></td>
-        <td>
-          <%= link_to result.name, edit_result_path(result) %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</table>
+  </div>
+</div>
