@@ -1,5 +1,6 @@
 class ResultsController < ApplicationController
   before_action :set_result, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     today_adult_top_scores = Result.where(created_at: 0.day.ago.all_day, adult: true).pluck(:score).uniq.max(3)
