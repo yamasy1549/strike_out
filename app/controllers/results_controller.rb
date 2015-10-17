@@ -2,8 +2,10 @@ class ResultsController < ApplicationController
   before_action :set_result, only: [:edit, :update, :destroy]
 
   def index
-    top_scores = Result.pluck(:score).uniq.max(3)
-    @top_results = Result.where(score: top_scores).order('score desc')
+    today_top_scores = Result.where(created_at: 0.day.ago.all_day).pluck(:score).uniq.max(3)
+    yesterday_top_scores = Result.where(created_at: 1.day.ago.all_day).pluck(:score).uniq.max(3)
+    @today_top_results = Result.where(score: today_top_scores).order('score desc')
+    @yesterday_top_results = Result.where(score: yesterday_top_scores).order('score desc')
   end
 
   def new
