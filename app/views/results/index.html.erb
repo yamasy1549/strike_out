@@ -8,7 +8,6 @@
     <tr>
       <th>Score</th>
       <th>Name</th>
-      <th></th>
     </tr>
   </thead>
 
@@ -16,10 +15,8 @@
     <% @today_adult_top_results.each do |result| %>
       <tr>
         <td><%= result.score %></td>
-        <td><%= result.name %></td>
         <td>
-          <%= link_to 'Edit', edit_result_path(result) %>
-          <%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to result.name, edit_result_path(result) %>
         </td>
       </tr>
     <% end %>
@@ -32,7 +29,6 @@
     <tr>
       <th>Score</th>
       <th>Name</th>
-      <th></th>
     </tr>
   </thead>
 
@@ -40,10 +36,8 @@
     <% @today_child_top_results.each do |result| %>
       <tr>
         <td><%= result.score %></td>
-        <td><%= result.name %></td>
         <td>
-          <%= link_to 'Edit', edit_result_path(result) %>
-          <%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to result.name, edit_result_path(result) %>
         </td>
       </tr>
     <% end %>
@@ -55,7 +49,6 @@
     <tr>
       <th>Score</th>
       <th>Name</th>
-      <th></th>
     </tr>
   </thead>
 
@@ -63,10 +56,8 @@
     <% @yesterday_adult_top_results.each do |result| %>
       <tr>
         <td><%= result.score %></td>
-        <td><%= result.name %></td>
         <td>
-          <%= link_to 'Edit', edit_result_path(result) %>
-          <%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to result.name, edit_result_path(result) %>
         </td>
       </tr>
     <% end %>
@@ -78,7 +69,6 @@
     <tr>
       <th>Score</th>
       <th>Name</th>
-      <th></th>
     </tr>
   </thead>
 
@@ -86,12 +76,11 @@
     <% @yesterday_child_top_results.each do |result| %>
       <tr>
         <td><%= result.score %></td>
-        <td><%= result.name %></td>
         <td>
-          <%= link_to 'Edit', edit_result_path(result) %>
-          <%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to result.name, edit_result_path(result) %>
         </td>
       </tr>
     <% end %>
   </tbody>
+</table>
 </table>
