@@ -1,0 +1,9 @@
+html,
+body {
+  @media screen and (max-width: 768px) {
+    background-image: url('logo-bg-mobile.png');
+  }
+  background-image: url('logo-bg-pc.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
