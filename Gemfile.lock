@@ -73,6 +73,7 @@ GEM
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     ffaker (2.1.0)
+    gimei (0.2.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hirb (0.7.3)
@@ -234,6 +235,7 @@ DEPENDENCIES
   did_you_mean
   factory_girl_rails
   ffaker
+  gimei
   hirb
   hirb-unicode
   jbuilder (~> 2.0)

@@ -33,6 +33,7 @@ group :development, :test  do
 
   gem 'factory_girl_rails'
   gem 'ffaker'
+  gem 'gimei'
 
   gem 'web-console', '~> 2.0'
 end
