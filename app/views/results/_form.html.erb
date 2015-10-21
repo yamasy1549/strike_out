@@ -1,14 +1,14 @@
-<%= form_for(@result) do |f| %>
+  <%= form_for(@result) do |f| %>
   <% if @result.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@result.errors.count, "error") %> prohibited this result from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(@result.errors.count, "error") %> prohibited this result from being saved:</h2>
 
-      <ul>
+    <ul>
       <% @result.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
   <div class="field">
@@ -20,10 +20,12 @@
     <%= f.number_field :score %>
   </div>
   <div class="field">
-    <%= f.radio_button :adult, true %>
-    <%= f.radio_button :adult, false %>
-  </div>
-  <div class="actions">
-    <%= f.submit "記録する" %>
-  </div>
-<% end %>
+    <%= f.radio_button :adult, true %>    
+    <%= f.radio_button :adult, false %> 
+  </div>  
+  <div class="row">
+    <div class="actions col-xs-12">
+      <%= f.submit "記録する", class: "btn btn-orange btn-lg btn-block" %>
+    </div>  
+  </div>  
+    <% end %> 
