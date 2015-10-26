@@ -11,13 +11,13 @@
 </div>
 <% end %>
 
-<div class="field">
+<div class="field form-group">
   <%= f.label :name %><br>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: "form-control", placeholder: "例：明石 太郎"%>
 </div>
-<div class="field">
+<div class="field form-group">
   <%= f.label :score %><br>
-  <%= f.number_field :score, min: 0 %>
+  <%= f.number_field :score, min: 0, class: "form-control", placeholder: "例：1000"%>
 </div>
 <div class="field">
   <%= f.radio_button :adult, true %>    
