@@ -1,31 +1,40 @@
 <%= form_for(@result) do |f| %>
-<% if @result.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@result.errors.count, "error") %> prohibited this result from being saved:</h2>
+  <% if @result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@result.errors.count, "error") %> prohibited this result from being saved:</h2>
 
-  <ul>
-    <% @result.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
+      <ul>
+        <% @result.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control", placeholder: "例：明石 太郎"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :score %><br>
+    <%= f.number_field :score, min: 0, class: "form-control", placeholder: "例：1000"%>
+  </div>
+
+  <div class="field">
+    <label class="switch-light well">
+      <%= f.check_box :adult %>
+      <span>
+        <span>こども</span>
+        <span>おとな</span>
+      </span>
+      <a class="btn btn-green"></a>
+    </label>
+  </div>
+
+  <div class="row">
+    <div class="actions col-xs-12">
+      <%= f.submit "記録する", class: "btn btn-orange btn-lg btn-block" %>
+    </div>
+  </div>
 <% end %>
-
-<div class="field form-group">
-  <%= f.label :name %><br>
-  <%= f.text_field :name, class: "form-control", placeholder: "例：明石 太郎"%>
-</div>
-<div class="field form-group">
-  <%= f.label :score %><br>
-  <%= f.number_field :score, min: 0, class: "form-control", placeholder: "例：1000"%>
-</div>
-<div class="field">
-  <%= f.radio_button :adult, true %>    
-  <%= f.radio_button :adult, false %> 
-</div>  
-<div class="row">
-  <div class="actions col-xs-12">
-    <%= f.submit "記録する", class: "btn btn-orange btn-lg btn-block" %>
-  </div>  
-</div>  
-  <% end %> 
