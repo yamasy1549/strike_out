@@ -25,7 +25,7 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       if @result.save
-        format.html { redirect_to new_result_url, notice: 'Result was successfully created.' }
+        format.html { redirect_to new_result_url, notice: 'スコアを記録しました。' }
         format.json { render :new, status: :created }
       else
         format.html { render :new }
@@ -37,7 +37,7 @@ class ResultsController < ApplicationController
   def update
     respond_to do |format|
       if @result.update(result_params)
-        format.html { redirect_to new_result_url, notice: 'Result was successfully updated.' }
+        format.html { redirect_to new_result_url, notice: 'スコア情報を更新しました。' }
         format.json { render :new, status: :ok }
       else
         format.html { render :edit }
