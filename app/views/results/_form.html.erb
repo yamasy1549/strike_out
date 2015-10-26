@@ -17,7 +17,7 @@
 </div>
 <div class="field">
   <%= f.label :score %><br>
-  <%= f.number_field :score %>
+  <%= f.number_field :score, min: 0 %>
 </div>
 <div class="field">
   <%= f.radio_button :adult, true %>    
