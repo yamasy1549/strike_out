@@ -18,7 +18,6 @@ gem 'devise'
 gem 'rails-assets-jquery'
 gem 'rails-assets-jquery-ujs'
 gem 'rails-assets-bootstrap-sass-official'
-gem 'rails-assets-font-awesome'
 
 group :development, :test  do
   gem 'rspec-rails'
