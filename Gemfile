@@ -46,3 +46,8 @@ group :development do
   gem 'rails_best_practices'
   gem 'did_you_mean'
 end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
