@@ -19,31 +19,33 @@
 .yesterday {
   border-top-width: 4px;
   text-align: center;
-}
-.yesterday:after {
-	content: 'yesterday';
-	display: inline-block;
-	position: relative;
-	top: -15px;
-	padding: 0 10px;
-	background: #f0f0f0;
-	color: #aaa;
-	font-size: 14px;
+
+  &:after {
+    content: 'yesterday';
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    padding: 0 10px;
+    background: #f0f0f0;
+    color: #aaa;
+    font-size: 14px;
+  }
 }
 
 .today {
   border-top-width: 4px;
   text-align: center;
-}
-.today:after {
-	content: 'today';
-	display: inline-block;
-	position: relative;
-	top: -15px;
-	padding: 0 10px;
-	background: #f0f0f0;
-	color: #000;
-	font-size: 14px;
+
+  &:after {
+    content: 'today';
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    padding: 0 10px;
+    background: #f0f0f0;
+    color: #000;
+    font-size: 14px;
+  }
 }
 
 .reload-notice {
