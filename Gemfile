@@ -15,6 +15,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+gem 'rails-assets-jquery'
+gem 'rails-assets-jquery-ujs'
 gem 'rails-assets-bootstrap-sass-official'
 
 group :development, :test  do
