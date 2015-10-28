@@ -1,3 +1,13 @@
+.ranking-index {
+  @font-face {
+    font-family: mplus-2p-black;
+    src: url('mplus-2p-black.ttf')
+    format('truetype')
+  }
+
+  font-family: mplus-2p-black;
+}
+
 .ranking-table {
   font-size: 24px;
   margin: auto;
