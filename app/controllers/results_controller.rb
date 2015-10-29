@@ -13,6 +13,10 @@ class ResultsController < ApplicationController
     @yesterday_child_top_results = Result.where(score: yesterday_child_top_scores, adult: false).order('score desc')
   end
 
+  def all
+    @results = Result.order('created_at desc')
+  end
+
   def new
     @result = Result.new
   end
