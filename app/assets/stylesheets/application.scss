@@ -39,7 +39,7 @@
 /* @import "bootstrap-sass-official/bootstrap/list-group"; */
 /* @import "bootstrap-sass-official/bootstrap/panels"; */
 /* @import "bootstrap-sass-official/bootstrap/responsive-embed"; */
-/* @import "bootstrap-sass-official/bootstrap/wells"; */
+@import "bootstrap-sass-official/bootstrap/wells";
 @import "bootstrap-sass-official/bootstrap/close";
 
 // Components w/ JavaScript
@@ -57,5 +57,6 @@
 // Original files
 @import "initialize";
 @import "index";
+@import "all";
 @import "forms";
 @import "toggle-switch";
