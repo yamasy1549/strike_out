@@ -1,0 +1,11 @@
+<table class="table all-results-table">
+  <h2 class="text-center">全記録の一覧</h2>
+
+  <% @results.each do |result| %>
+    <tr>
+      <td><%= link_to result.name, edit_result_url(result) %></td>
+      <td><%= result.score %>pt</td>
+      <td><%= result.created_at.strftime("%H:%M") %></td>
+    </tr>
+  <% end %>
+</table>

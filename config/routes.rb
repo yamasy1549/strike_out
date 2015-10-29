@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   devise_for :users, only: [:sign_in, :sign_out, :session]
   resources :results, except: [:show]
+  get 'results/all', to: 'results#all'
 end

@@ -13,6 +13,10 @@ class ResultsController < ApplicationController
     @yesterday_child_top_results = Result.where(score: yesterday_child_top_scores, adult: false).order('score desc')
   end
 
+  def all
+    @results = Result.order('created_at desc')
+  end
+
   def new
     @result = Result.new
   end
@@ -25,7 +29,7 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       if @result.save
-        format.html { redirect_to new_result_url, notice: 'スコアを記録しました。' }
+        format.html { redirect_to root_url, notice: 'スコアを記録しました。' }
         format.json { render :new, status: :created }
       else
         format.html { render :new }
@@ -37,7 +41,7 @@ class ResultsController < ApplicationController
   def update
     respond_to do |format|
       if @result.update(result_params)
-        format.html { redirect_to new_result_url, notice: 'スコア情報を更新しました。' }
+        format.html { redirect_to root_url, notice: 'スコア情報を更新しました。' }
         format.json { render :new, status: :ok }
       else
         format.html { render :edit }
@@ -49,7 +53,7 @@ class ResultsController < ApplicationController
   def destroy
     @result.destroy
     respond_to do |format|
-      format.html { redirect_to results_url, notice: 'Result was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Result was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
