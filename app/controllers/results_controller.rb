@@ -11,6 +11,7 @@ class ResultsController < ApplicationController
     @today_child_top_results = Result.where(score: today_child_top_scores, adult: false).order('score desc')
     @yesterday_adult_top_results = Result.where(score: yesterday_adult_top_scores, adult: true).order('score desc')
     @yesterday_child_top_results = Result.where(score: yesterday_child_top_scores, adult: false).order('score desc')
+    @challengers = Result.count
   end
 
   def all
